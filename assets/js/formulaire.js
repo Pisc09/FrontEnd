@@ -44,32 +44,32 @@ export async function soumettreFormulaire() {
   });
 }
 
-// export function disabled() {
-//   function btnValiderDisabled() {
-//     const fichier = document.getElementById("monFichier").files;
-//     const titre = document.querySelector("#title").value;
-//     const categorie = document.querySelector(".maListe").value;
+export function disabled() {
+  function btnValiderDisabled() {
+    const fichier = document.getElementById("monFichier").files;
+    const titre = document.querySelector("#title").value;
+    const categorie = document.querySelector(".maListe").value;
 
-//     const btnValider = document.querySelector('input[value="Valider"]');
+    const btnValider = document.querySelector('input[value="Valider"]');
 
-//     if (
-//       titre.value.trim() !== "" &&
-//       categorie.value !== "0" &&
-//       fichier.length > 0
-//     ) {
-//       btnValider.disabled = false;
-//       btnValider.classList.remove("disabled");
-//     } else {
-//       btnValider.disabled = true;
-//       btnValider.classList.add("disabled");
-//     }
-//   }
+    if (
+      titre.value.trim() !== "" &&
+      categorie.value !== "0" &&
+      fichier.length > 0
+    ) {
+      btnValider.disabled = false;
+      btnValider.classList.remove("disabled");
+    } else {
+      btnValider.disabled = true;
+      btnValider.classList.add("disabled");
+    }
+  }
 
-//   const titre = document.querySelector("#title");
-//   const categorie = document.querySelector(".maListe");
-//   const fichier = document.getElementById("monFichier");
+  const titre = document.querySelector("#title");
+  const categorie = document.querySelector(".maListe");
+  const fichier = document.getElementById("monFichier");
 
-//   titre.addEventListener("input", btnValiderDisabled);
-//   categorie.addEventListener("change", btnValiderDisabled);
-//   fichier.addEventListener("change", btnValiderDisabled);
-// }
+  titre.addEventListener("input", btnValiderDisabled);
+  categorie.addEventListener("change", btnValiderDisabled);
+  fichier.addEventListener("change", btnValiderDisabled);
+}
