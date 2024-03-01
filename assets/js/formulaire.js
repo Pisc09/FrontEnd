@@ -46,9 +46,14 @@ export async function soumettreFormulaire() {
 
 export function disabled() {
   function btnValiderDisabled() {
-    const fichier = document.getElementById("monFichier").files;
+    // const fichier = document.getElementById("monFichier").files;
+    // console.log(fichier);
+    // const titre = document.querySelector("#title").value;
+    // const categorie = document.querySelector(".maListe").value;
+
     const titre = document.querySelector("#title").value;
     const categorie = document.querySelector(".maListe").value;
+    const fichier = document.getElementById("monFichier").files;
 
     const btnValider = document.querySelector('input[value="Valider"]');
 
@@ -64,10 +69,6 @@ export function disabled() {
       btnValider.classList.add("disabled");
     }
   }
-
-  const titre = document.querySelector("#title");
-  const categorie = document.querySelector(".maListe");
-  const fichier = document.getElementById("monFichier");
 
   titre.addEventListener("input", btnValiderDisabled);
   categorie.addEventListener("change", btnValiderDisabled);
