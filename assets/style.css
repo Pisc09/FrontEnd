@@ -1,0 +1,653 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/** end reset css**/
+body {
+  max-width: 1140px;
+  margin: auto;
+  font-family: "Work Sans";
+  font-size: 14px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+section {
+  margin: 50px 0;
+}
+
+h1 {
+  display: flex;
+  flex-direction: column;
+  font-family: "Syne";
+  font-size: 22px;
+  font-weight: 800;
+  color: #b1663c;
+}
+
+h1 > span {
+  font-family: "Work Sans";
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+h2 {
+  font-family: "Syne";
+  font-weight: 700;
+  font-size: 30px;
+  color: #1d6154;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+nav li {
+  padding: 0 10px;
+  font-size: 1.2em;
+}
+
+li:hover {
+  color: #b1663c;
+}
+#introduction {
+  display: flex;
+  align-items: center;
+}
+#introduction figure {
+  flex: 1;
+}
+#introduction img {
+  display: block;
+  margin: auto;
+  width: 80%;
+}
+
+#introduction article {
+  flex: 1;
+}
+#introduction h2 {
+  margin-bottom: 1em;
+}
+
+#introduction p {
+  margin-bottom: 0.5em;
+}
+#portfolio h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+.gallery {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+.gallery img {
+  width: 100%;
+}
+#contact {
+  width: 50%;
+  margin: auto;
+}
+#contact > * {
+  text-align: center;
+}
+#contact h2 {
+  margin-bottom: 20px;
+}
+#contact form {
+  text-align: left;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+#contact input {
+  height: 50px;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+#contact label {
+  margin: 2em 0 1em 0;
+}
+#contact textarea {
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+input[type="submit"] {
+  font-family: "Syne";
+  font-weight: 700;
+  color: white;
+  background-color: #1d6154;
+  margin: 2em auto;
+  width: 180px;
+  text-align: center;
+  border-radius: 60px;
+  cursor: pointer;
+}
+input[type="submit"].disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  border: 1px solid #999999;
+}
+footer nav ul {
+  display: flex;
+  justify-content: flex-end;
+  margin: 2em;
+}
+/*************** Mes Ajouts & Modifications ***************/
+/***** Liens des pages *****/
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/***** Début Partie Catégories *****/
+button {
+  border: none;
+  background-color: inherit;
+}
+.nav-categories {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+  margin: 0 0 30px;
+}
+.btns-categories {
+  font-family: "Syne";
+  font-size: 1.2rem;
+  font-weight: 700;
+  background-color: white;
+  color: #1d6154;
+  text-align: center;
+  border: 1px solid #1d6154;
+  border-radius: 60px;
+  padding: 10px 25px;
+
+  cursor: pointer;
+}
+.btns-categories:hover {
+  background-color: #1d6154;
+  color: white;
+}
+.btns-categories.selected {
+  background-color: #1d6154;
+  color: white;
+}
+.default-selected {
+  background-color: #1d6154;
+  color: white;
+}
+/***** Fin Partie Catégories *****/
+
+/***** Début Partie Edits *****/
+/***** Lors du login authentification OK *****/
+.logged-in {
+  margin-top: 70px;
+}
+.top-bar-edit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  width: 100%;
+  background-color: black;
+  padding: 15px 0px;
+  margin: 0;
+  display: none;
+
+  z-index: 99;
+}
+.top-bar-edit button {
+  border: none;
+  color: white;
+  background-color: transparent;
+  font-size: 1.2rem;
+  padding: 0;
+  cursor: pointer;
+}
+
+.edit {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+button.btn-edit {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: auto;
+  font-size: 1.2rem;
+  margin-top: 3px;
+  cursor: pointer;
+}
+.fa-pen-to-square {
+  width: 25px;
+  height: 25px;
+  color: black;
+  font-size: 1.3rem;
+}
+/***** La Partie Popup *****/
+section.open-popup {
+  margin: 0;
+}
+.open-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.37);
+  z-index: 999;
+  display: none;
+}
+.content-popup {
+  width: 730px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  background-color: white;
+  border-radius: 15px;
+  padding: 35px;
+}
+.icones-popup {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.fa-xmark,
+.fa-arrow-left {
+  font-size: 2rem;
+  cursor: pointer;
+}
+.fa-arrow-left {
+  visibility: hidden;
+}
+.titre-popup {
+  font-family: "Work Sans", sans-serif;
+  font-size: 25px;
+  color: black;
+  margin: 15px 0 35px 0;
+}
+#content-form-popup {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 0;
+}
+.hide-download-photo {
+  display: none;
+}
+.bg-image-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e8f1f7;
+  border-radius: 5px;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  /* padding: 0 0 20px 0; Mettre une fois le preview image en display*/
+  margin: 0;
+  cursor: pointer;
+}
+.bg-image {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+#content-form-popup {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+#content-form-popup form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  text-align: left;
+  margin: 0;
+  padding: 0 95px;
+}
+#formulaire-popup {
+  display: none;
+}
+#formulaire-popup label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 1.25rem 0 0.625rem 0;
+  padding: 0;
+}
+#formulaire-popup input {
+  width: 100%;
+  height: 50px;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  padding-left: 15px;
+}
+#formulaire-popup select {
+  width: 100%;
+  height: 50px;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+select {
+  appearance: none;
+  background-image: url(./images/chevron-down-solid.svg);
+  background-repeat: no-repeat;
+  background-position: right center;
+  height: 50px;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  padding: 12px 20px;
+  cursor: pointer;
+}
+hr {
+  height: 1px;
+  width: 100%;
+  background-color: black;
+  border: none;
+  margin-top: 50px;
+}
+#formulaire-popup input[value="Valider"] {
+  font-family: "Syne";
+  font-weight: 700;
+  color: white;
+  background-color: #1d6154;
+  font-size: 1.2em;
+  margin: 2em auto;
+  width: 350px;
+  height: 50px;
+  text-align: center;
+  border-radius: 60px;
+  cursor: pointer;
+}
+.content-delete-photo {
+  display: none;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 100%;
+}
+.delete-photos {
+  width: auto;
+  height: 300px;
+  overflow: auto;
+  padding: 15px;
+}
+.photos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 35px;
+}
+
+.photos span {
+  position: relative;
+  width: auto;
+  height: auto;
+}
+
+.photos span img {
+  width: 125px;
+}
+
+.fa-trash-can {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  padding: 10px;
+  cursor: pointer;
+}
+.fa-trash-can:hover {
+  color: #ff6969;
+}
+section.content-confirme-delete {
+  margin: 0;
+}
+.content-confirme-delete {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.37);
+  z-index: 9999;
+  display: none;
+}
+.stick-confirme-delete {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 350px;
+  height: auto;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  gap: 15px;
+}
+.texte-confirme-delete {
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+}
+.content-buttons-confirme {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: auto;
+  gap: 15px;
+}
+.btn-annuler {
+  width: 180px;
+  height: 40px;
+  background-color: gray;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.btn-suppression {
+  width: 180px;
+  height: 40px;
+  background-color: #1d6154;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.btn-add-photo {
+  font-family: "Syne";
+  font-weight: 700;
+  color: white;
+  background-color: #1d6154;
+  font-size: 1.2em;
+  margin: 2em auto;
+  width: 350px;
+  height: 50px;
+  text-align: center;
+  border-radius: 60px;
+  cursor: pointer;
+}
+.preview-photo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #e8f1f7;
+}
+.img-preview {
+  width: 25%;
+  cursor: pointer;
+}
+.maListe {
+  padding-left: 15px;
+}
+
+/***** Fin Partie Edits *****/
+/*************** Fin De Mes Ajouts & Modifications ***************/
