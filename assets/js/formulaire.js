@@ -18,13 +18,13 @@ export async function soumettreFormulaire() {
     formData.append("category", categorie);
 
     try {
-      const token = window.localStorage.getItem("token"); // Récupérez le jeton du local storage
+      // Récupérez le jeton du local storage
+      const token = window.localStorage.getItem("token");
       const response = await fetch("http://localhost:5678/api/works", {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${token}`,
-          // "Content-Type": "multipart/form-data",
           Accept: "application/json",
+          Authorization: `Bearer ${token}`,
         },
         body: formData,
       });
@@ -42,35 +42,32 @@ export async function soumettreFormulaire() {
       console.error("Error :", error);
     }
   });
-}
 
-export function disabled() {
-  function btnValiderDisabled() {
-    // const fichier = document.getElementById("monFichier").files;
-    // console.log(fichier);
-    // const titre = document.querySelector("#title").value;
-    // const categorie = document.querySelector(".maListe").value;
+  const titre = document.getElementById("title");
+  console.log(titre);
+  const fichier = document.getElementById("monFichier");
+  console.log(fichier);
+  const categorie = document.querySelector(".maListe");
+  console.log(categorie);
 
-    const titre = document.querySelector("#title").value;
-    const categorie = document.querySelector(".maListe").value;
-    const fichier = document.getElementById("monFichier").files;
+  const btnValider = document.querySelector('input[type="submit"]');
+  console.log(btnValider);
 
-    const btnValider = document.querySelector('input[value="Valider"]');
-
+  function btnDisabled() {
     if (
+      // fichier.length > 0 &&
       titre.value.trim() !== "" &&
-      categorie.value !== "0" &&
-      fichier.length > 0
+      categorie.value !== "0"
     ) {
-      btnValider.disabled = false;
+      btnValider.disabled = true;
       btnValider.classList.remove("disabled");
     } else {
-      btnValider.disabled = true;
+      btnValider.disabled = false;
       btnValider.classList.add("disabled");
     }
   }
 
-  titre.addEventListener("input", btnValiderDisabled);
-  categorie.addEventListener("change", btnValiderDisabled);
-  fichier.addEventListener("change", btnValiderDisabled);
+  fichier.addEventListener("change", btnDisabled);
+  titre.addEventListener("input", btnDisabled);
+  categorie.addEventListener("change", btnDisabled);
 }

@@ -4,8 +4,8 @@ import {
   filterCategories,
   generatePhotos,
 } from "./galleries.js";
-import { loginAuth } from "./login.js";
 import { modalPopup } from "./edits.js";
+import { loginAuth } from "./login.js";
 import { soumettreFormulaire /*disabled*/ } from "./formulaire.js";
 
 /**Page categories.js */
@@ -21,4 +21,3 @@ loginAuth();
 modalPopup();
 /**Page formulaire.js */
 soumettreFormulaire();
-// disabled();
