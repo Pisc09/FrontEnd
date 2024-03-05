@@ -64,6 +64,10 @@ export function modalPopup() {
   iXmark.addEventListener("click", () => {
     sectionParentPopup.style.display = "none";
 
+    const formulaire = document.getElementById("formulaire-popup");
+
+    formulaire.reset();
+
     imgPreview.src = "";
     imgPreview.alt = "";
 

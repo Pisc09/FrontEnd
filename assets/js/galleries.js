@@ -1,4 +1,4 @@
-let works = [];
+export let works = [];
 export function galleryGetData(filtreCategories = []) {
   fetch("http://localhost:5678/api/works")
     .then((res) => res.json())

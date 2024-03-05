@@ -5,8 +5,9 @@ import {
   generatePhotos,
 } from "./galleries.js";
 import { modalPopup } from "./edits.js";
-import { loginAuth } from "./login.js";
-import { soumettreFormulaire /*disabled*/ } from "./formulaire.js";
+import { soumettreFormulaire } from "./formulaire.js";
+
+const formulaire = document.getElementById("formulaire-popup");
 
 /**Page categories.js */
 categoriesData();
@@ -16,8 +17,13 @@ galleryGetData();
 filterCategories();
 generatePhotos();
 /**Page login.js */
-loginAuth();
 /**Page edits.js */
 modalPopup();
 /**Page formulaire.js */
-soumettreFormulaire();
+// soumettreFormulaire();
+
+formulaire.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  soumettreFormulaire();
+});
