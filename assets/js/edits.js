@@ -20,6 +20,7 @@ export function modalPopup() {
   const iXmark = qS(".fa-xmark");
   const iArrowLeft = qS(".fa-arrow-left");
   const sectionParentPopup = qS(".open-popup");
+  const titlePopup = qS(".titre-popup");
   const formPopup = qS("#formulaire-popup");
   const inputFileLoad = qS(".hide-download-photo");
   console.log(inputFileLoad);
@@ -45,6 +46,7 @@ export function modalPopup() {
   function openPopup() {
     sectionParentPopup.style.display = "flex";
     iArrowLeft.style.visibility = "hidden";
+    titlePopup.innerText = "Galerie photo";
     formPopup.style.display = "none";
     deletePopup.style.display = "flex";
   }
@@ -56,6 +58,7 @@ export function modalPopup() {
   btnAddPhotos.addEventListener("click", () => {
     sectionParentPopup.style.display = "flex";
     iArrowLeft.style.visibility = "visible";
+    titlePopup.innerText = "Ajout photo";
     formPopup.style.display = "flex";
     deletePopup.style.display = "none";
   });
